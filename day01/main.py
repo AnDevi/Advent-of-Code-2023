@@ -16,7 +16,7 @@ for line in lines:
 
 	first = re.search(r'[0-9]|one|two|three|four|five|six|seven|eight|nine', line).group()
 	last = re.findall(r'(?s:.*)([0-9]|one|two|three|four|five|six|seven|eight|nine)', line)[0]
-	sum_p2 += (int(first) if len(first) == 1 else digit_dict[first]) * 10 + (int(last) if len(last) == 1 else digit_dict[last])
+	sum_p2 += (digit_dict[first] if first in digit_dict else int(first))  * 10 + (digit_dict[last] if last in digit_dict else int(last))
 
 print(f'Part 1: {sum_p1}')		
 print(f'Part 2: {sum_p2}')
