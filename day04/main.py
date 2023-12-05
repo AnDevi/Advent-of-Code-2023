@@ -4,8 +4,6 @@ from pathlib import Path
 
 content = Path(Path(__file__).parent.resolve() / 'input.txt').read_text()
 
-grid = [[num for num in line.strip()] for line in content.splitlines()]
-
 sum_p1 = 0
 
 scratchcards = []
